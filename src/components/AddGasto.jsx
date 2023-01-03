@@ -27,9 +27,8 @@ function AddGasto() {
         console.log(responseJson);
         settarjetas(responseJson)
       }
-      return () => {
         getTarjetas()
-      }
+
     }, [])
     
     const addGasto = async(e) => {

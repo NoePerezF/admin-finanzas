@@ -27,9 +27,8 @@ const AddIngreso = () => {
         console.log(responseJson);
         settarjetas(responseJson)
       }
-      return () => {
         getTarjetas()
-      }
+
     }, [])
     
     const addGasto = async(e) => {
