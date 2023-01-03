@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import AddGasto from './components/AddGasto';
+import AddIngreso from './components/AddIngreso';
+import AddTarjeta from './components/AddTarjeta';
+import Menu from './components/Menu';
+import Resumen from './components/Resumen';
 
 function App() {
+  const [page, setpage] = useState(1)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Menu setpage = {setpage} page={page}/>
+    {
+      page === 1 ? <Resumen/> :
+      page === 2 ?
+        <AddTarjeta/> :
+      page === 3 ?
+      <AddGasto/>:
+      <AddIngreso/>
+    }
+    </>
   );
 }
 
