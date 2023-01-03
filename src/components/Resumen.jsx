@@ -122,9 +122,7 @@ const Resumen = () => {
       setgrafica2(dataGraf2);
       setgrafica3(dataGraf3);
     };
-    return () => {
       getTarjetas();
-    };
   }, []);
 
   const getGrafica = (i, tarjetass) => {
